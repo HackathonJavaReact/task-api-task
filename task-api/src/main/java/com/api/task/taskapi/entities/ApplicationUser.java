@@ -23,9 +23,9 @@ public class ApplicationUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-
+/*
     @OneToMany(mappedBy = "user")
     @JsonIgnore
     private List<Task> tasks;
-    
+    */
 }
