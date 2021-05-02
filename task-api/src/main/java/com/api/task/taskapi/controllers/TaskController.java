@@ -55,4 +55,14 @@ public class TaskController {
             return new ResponseEntity<String>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @GetMapping(value = "/ofuser/{userId}")
+    public ResponseEntity<?> getTasksByUserId(@PathVariable Long userId) {
+        try {
+            List<Task> tasks = this.service.getByUserId(userId);
+            return new ResponseEntity<List<Task>>(tasks, HttpStatus.OK);
+        } catch (DatabaseException e) {
+            return new ResponseEntity<String>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

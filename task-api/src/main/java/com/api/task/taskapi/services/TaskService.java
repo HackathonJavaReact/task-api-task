@@ -19,11 +19,15 @@ public class TaskService {
     }
 
     public Task getById(Long id) throws DatabaseException {
-        return this.repository.getOne(id);
+        return this.repository.findById(id).get();
     }
 
     public Task create(Task task) throws DatabaseException {
         return this.repository.save(task);
+    }
+
+    public List<Task> getByUserId(Long userId) throws DatabaseException {
+        return this.repository.findByUserId(userId);
     }
     
 }
