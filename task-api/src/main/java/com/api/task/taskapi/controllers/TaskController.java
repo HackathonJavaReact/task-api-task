@@ -2,6 +2,8 @@ package com.api.task.taskapi.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import com.api.task.taskapi.entities.Task;
 import com.api.task.taskapi.exceptions.DatabaseException;
 import com.api.task.taskapi.services.TaskService;
@@ -47,7 +49,7 @@ public class TaskController {
 
 
     @PostMapping
-    public ResponseEntity<?> createTask(@RequestBody Task task) {
+    public ResponseEntity<?> createTask(@Valid @RequestBody Task task) {
         try {
             Task t = this.service.create(task);
             return new ResponseEntity<Task>(t, HttpStatus.OK);
