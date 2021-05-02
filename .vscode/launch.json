@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-TaskApiApplication<task-api>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.api.task.taskapi.TaskApiApplication",
+            "projectName": "task-api",
+            "args": ""
+        }
+    ]
+}
